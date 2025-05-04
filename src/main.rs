@@ -22,6 +22,7 @@ fn get_system_prompt() -> String {
         .to_string_lossy()
         .to_string();
 
+    // This is just cline's system prompt, minus the custom tool calling (we assume the LLM can call tools without any coaxing)
     format!(
         "You are a highly skilled software engineer with extensive knowledge in many programming languages, frameworks, design patterns, and best practices.
 
