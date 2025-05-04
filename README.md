@@ -6,7 +6,7 @@ practices with agents.
 To run, install rust and do:
 
 ```bash
-[you@machine]$ ANTHROPIC_API_KEY=... cargo run`
+[you@machine]$ ANTHROPIC_API_KEY=... cargo run
 ```
 
 Asimov contains the following components:
