@@ -1,7 +1,8 @@
 # asimov
 
 A small [ampcode-style](https://ampcode.com/how-to-build-an-agent) coding agent to demonstrate naive or vulnerable
-practices with agents.
+practices with agents. This is a WIP demonstration of a project I'm working on for someone else, not for public
+use.
 
 To run, install rust and do:
 
