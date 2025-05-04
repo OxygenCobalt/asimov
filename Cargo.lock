@@ -77,6 +77,22 @@ dependencies = [
 ]
 
 [[package]]
+name = "asimov"
+version = "0.1.0"
+dependencies = [
+ "colored",
+ "dirs",
+ "dotenv",
+ "env_logger",
+ "log",
+ "reqwest",
+ "schemars",
+ "serde",
+ "serde_json",
+ "tokio",
+]
+
+[[package]]
 name = "atomic-waker"
 version = "1.1.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -155,22 +171,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "fde0e0ec90c9dfb3b4b1a0891a7dcd0e2bffde2f7efed5fe7c9bb00e5bfb915e"
 dependencies = [
  "windows-sys 0.59.0",
-]
-
-[[package]]
-name = "coper"
-version = "0.1.0"
-dependencies = [
- "colored",
- "dirs",
- "dotenv",
- "env_logger",
- "log",
- "reqwest",
- "schemars",
- "serde",
- "serde_json",
- "tokio",
 ]
 
 [[package]]

@@ -7,6 +7,7 @@ use crate::anthropic::api::ClaudeModel;
 use crate::core::llm::{Hyperparams, Model, Provider};
 use crate::core::tool::ProviderTool;
 
+/// An implementation of the `Provider` trait for Anthropic's models.
 #[derive(Clone, Debug)]
 pub struct Anthropic {
     client: Client,
@@ -14,6 +15,7 @@ pub struct Anthropic {
 }
 
 impl Anthropic {
+    /// Create a new Anthropic client with the given API key.
     pub fn new(api_key: String) -> Self {
         Self {
             api_key,
@@ -22,6 +24,10 @@ impl Anthropic {
     }
 }
 
+/// An implementation of the `Provider` trait for Anthropic's models.
+/// 
+/// Note that this will yield a refined `AnthropicModel` implementation, which adds
+/// additional functionality.
 impl Provider<Claude> for Anthropic {
     #[allow(refining_impl_trait)]
     async fn obtain(
@@ -40,13 +46,19 @@ impl Provider<Claude> for Anthropic {
     }
 }
 
+/// A trait that adds additional functionality to the `Model` trait for Anthropic's models.
+/// 
+/// Notably, this trait provides tool implementations provided by Anthropic's API.
 pub trait AnthropicModel: Model {
     fn editor<'a, 'b>(&'a self) -> impl ProviderTool + 'b;
 }
 
+/// Claude, Anthropic's flagship LLM.
 #[derive(Clone, Copy, Debug)]
 pub enum Claude {
+    /// Claude 3.5 Sonnet.
     ThreeDotFiveSonnet,
+    /// Claude 3.7 Sonnet.
     ThreeDotSevenSonnet,
 }
 

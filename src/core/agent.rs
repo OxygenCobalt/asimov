@@ -2,6 +2,12 @@ use super::llm::{AssistantContent, Content, Message, Model, UserContent};
 use super::tool::Toolbox;
 use colored::*;
 
+/// A simple "ampcode-style" agent.
+/// 
+/// This agent will run the LLM with a set of tools, evaluate the resulting tool calls, and then
+/// return the results to the LLM. This will continue until the LLM does not return any more tool
+/// calls. Note that this Agent assumes that the LLM can chain tool calls indefinitely to complete
+/// a task.
 pub struct Agent<'a, M: Model> {
     model: M,
     toolbox: Toolbox<'a>,
